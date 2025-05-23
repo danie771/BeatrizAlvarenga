@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagamento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-md p-6 bg-gray-100 rounded-xl shadow-md text-center">
+    <h2 class="text-2xl font-bold mb-4">Pagamento</h2>
+    <p class="mb-4">Para liberar o acesso, faça o pagamento via Pix abaixo:</p>
+
+    <textarea readonly class="w-full p-3 bg-white rounded text-sm text-gray-600 mb-4" rows="4">00020101021126580014br.gov.bcb.pix01362fc8fd02-fa45-4ff3-80a4-1c2f3439231b520400005303986540530.005802BR5907LIVEPIX6009SAO PAULO622805246830c7fa097ec4ddb80efb58630479E1</textarea>
+
+    <button onclick="copiarPix()" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700">Copiar PIX</button>
+    
+    <p id="mensagem" class="text-green-600 mt-3 hidden">PIX copiado com sucesso!</p>
+  </div>
+
+  <script>
+    function copiarPix() {
+      const textarea = document.querySelector('textarea');
+      textarea.select();
+      document.execCommand('copy');
+      document.getElementById('mensagem').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
